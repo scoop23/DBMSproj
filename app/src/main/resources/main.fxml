@@ -72,7 +72,7 @@
             </VBox>
          </left>
          <bottom>
-            <AnchorPane prefHeight="165.0" prefWidth="1005.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="0.0" prefWidth="1150.0" BorderPane.alignment="CENTER" />
          </bottom>
       </BorderPane>
       <AnchorPane fx:id="overlayPane" prefHeight="587.0" prefWidth="1005.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" visible="false">
