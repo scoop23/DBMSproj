@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -20,6 +21,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 public class MainSceneController implements Initializable {
+
+    @FXML
+    private Button fxRefresh;
 
     @FXML
     private Button fxAdd;
@@ -116,6 +120,9 @@ public class MainSceneController implements Initializable {
           fxAge.setCellValueFactory(new PropertyValueFactory<>("age"));
           table.setItems(initialData());
           fxComboBox.setItems(options);
+          table.getSelectionModel().setSelectionMode(
+             SelectionMode.MULTIPLE
+        );
       }
 
 /// ACTION SHIT ////
@@ -128,14 +135,34 @@ public class MainSceneController implements Initializable {
     }
 
     @FXML
-    private void btnDelete(ActionEvent event) {
+    private void btnRefresh(ActionEvent event) {
+        table.setItems(initialData());
+    }
 
+    @FXML
+    private void btnDelete(ActionEvent event) {
+        
         // table.getItems().removeAll(table.getSelectionModel().getSelectedItem());
         int SelectedId = table.getSelectionModel().getSelectedItem().getId();
-        new database();
 
-        database.deliverDonor(SelectedId);
+        ObservableList<Donors> tabledonors = table.getSelectionModel().getSelectedItems();
+        System.out.println(tabledonors);
+
+        if (tabledonors.isEmpty()) {
+            System.out.println("No donor selected for deletion");
+            return;  // Exit if no donor is selected
+        }
+
+        for (Donors donors : tabledonors) {
+            int donorId = donors.getId();
+            new database();
+            database.deliverDonor(donorId);
+        }
+        
         table.setItems(initialData());
+        // database.deliverDonor(SelectedId);
+        // 
+        System.out.println("Deleted donors: " + tabledonors);
     }
 
     @FXML

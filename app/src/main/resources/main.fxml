@@ -64,7 +64,8 @@
                <children>
                   <Button fx:id="fxAdd" mnemonicParsing="false" onAction="#showOverlay" prefHeight="68.0" prefWidth="134.0" text="Add" />
                   <Button fx:id="fxDelete" mnemonicParsing="false" onAction="#btnDelete" prefHeight="68.0" prefWidth="134.0" text="Delete" />
-                  <Button mnemonicParsing="false" prefHeight="68.0" prefWidth="134.0" text="Add" />
+                  
+                  <Button fx:id="fxRefresh" mnemonicParsing="false" onAction="#btnRefresh" prefHeight="68.0" prefWidth="134.0" text="Refresh" />
                </children>
                <padding>
                   <Insets top="30.0" />

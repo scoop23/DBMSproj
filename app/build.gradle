@@ -12,6 +12,14 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.14'
 }
 
+processResources {
+    filesMatching('**/*.fxml') {
+        expand(project.properties)
+    }
+}
+
+
+
 sourceSets {
     main {
         java {
