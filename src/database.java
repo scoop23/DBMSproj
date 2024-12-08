@@ -87,19 +87,19 @@ public class database {
         }
     }
 
-    public static void deliverDonor(String id){
+    public static void deliverDonor(int id){
         Connection conn = sqliteConnection.connect();
         String del = "DELETE FROM donor WHERE id = ?";
         PreparedStatement ps = null;
         try {
             ps = conn.prepareStatement(del);
-            ps.setString(1, id);
+            ps.setInt(1, id);
             int affectedRows = ps.executeUpdate();
             
             if(affectedRows > 0) {
                 System.out.println("Donor Delivered");
             }else {
-                System.out.println("No donor found with UUID: " + id);
+                System.out.println("No donor found with Id: " + id);
             }
 
             System.out.println("Donor Delivered");

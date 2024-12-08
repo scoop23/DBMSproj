@@ -126,8 +126,14 @@ public class MainSceneController implements Initializable {
     }
 
     @FXML
-    void btnDelete(ActionEvent event) {
+    private void btnDelete(ActionEvent event) {
 
+        // table.getItems().removeAll(table.getSelectionModel().getSelectedItem());
+        int SelectedId = table.getSelectionModel().getSelectedItem().getId();
+        new database();
+
+        database.deliverDonor(SelectedId);
+        table.setItems(initialData());
     }
 
     @FXML
