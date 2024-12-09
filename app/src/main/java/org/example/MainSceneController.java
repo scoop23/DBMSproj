@@ -11,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.SelectionMode;
@@ -19,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 public class MainSceneController implements Initializable {
 
@@ -75,6 +77,7 @@ public class MainSceneController implements Initializable {
 
     @FXML
     private TableView<Donors> table;
+        // Main Scene Layout
 
 
     // init
@@ -161,8 +164,7 @@ public class MainSceneController implements Initializable {
         
         table.setItems(initialData());
         // database.deliverDonor(SelectedId);
-        // 
-        System.out.println("Deleted donors: " + tabledonors);
+        alertbox.display("Deliver", "Blood Delivered");
     }
 
     @FXML
@@ -183,6 +185,13 @@ public class MainSceneController implements Initializable {
         String middleName = fxTextMiddleName.getText();
         int age = Integer.parseInt(fxTextAge.getText());
         String bloodType = fxComboBox.getValue();
+
+        if (fxTextFirstName.getText().isEmpty() || fxTextLastName.getText().isEmpty() ||
+        fxTextAge.getText().isEmpty() || fxComboBox.getValue() == null) {
+        System.out.println("All fields are required!");
+        return;
+        }
+
         database.Insert(bloodType, firstName, middleName, lastName, age);
         // Clear the text fields after inserting
         fxTextFirstName.clear();
@@ -191,6 +200,8 @@ public class MainSceneController implements Initializable {
         fxTextAge.clear();  // If fxTextAge is a TextField for the age input
         fxComboBox.setValue(null);  // Optionally, clear the combo box
         table.setItems(initialData());
+
+        alertbox.display("Data Inserted", "Blood Type: " + bloodType);
     }
 }
   

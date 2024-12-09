@@ -13,18 +13,25 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
  
 public class App extends Application implements EventHandler<ActionEvent>{
+    
     public static String getGreeting() {
         return "Hello from App!";
     }
+
     @Override
     public void start(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/main.fxml"));
             Parent root = loader.load(); 
             Scene scene = new Scene(root);
+
+
+            
             primaryStage.setTitle("Blood Donation System");
             primaryStage.setScene(scene);
             primaryStage.show();
+
+
         } catch (IOException e) {
             e.printStackTrace(); 
         }

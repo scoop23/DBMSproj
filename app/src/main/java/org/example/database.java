@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 public class database {
     // public static void main(String[] args) throws SQLException {
-    //     // Insert("A+" , "Carl Justin" , "Satuito" , 19);
+    //     // Insert("A+" , "Sebasch Amauri" , "Santillan" , 19);
     //     // deliverDonor("4015bbea-d7b4-4731-96fb-674d0d16f2a2");
     //     System.out.println();
     //     // readAllData();
@@ -99,7 +99,7 @@ public class database {
             int affectedRows = ps.executeUpdate();
             
             if(affectedRows > 0) {
-                System.out.println("Donor Delivered");
+                System.out.println("Blood Delivered");
             }else {
                 System.out.println("No donor found with Id: " + id);
             }
