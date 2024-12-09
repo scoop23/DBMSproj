@@ -21,7 +21,7 @@
          <top>
             <VBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="1005.0" spacing="35.0" BorderPane.alignment="CENTER">
                <children>
-                  <MenuBar prefHeight="1.0" prefWidth="829.0">
+                  <MenuBar prefHeight="1.0" prefWidth="829.0" style="-fx-background-color: rgba(70, 31, 242, 0.56);">
                     <menus>
                       <Menu mnemonicParsing="false" text="File">
                         <items>
@@ -44,7 +44,7 @@
             </VBox>
          </top>
          <right>
-            <TableView fx:id="table" prefHeight="491.0" prefWidth="925.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="table" prefHeight="667.0" prefWidth="1025.0" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="fxID" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="fxUUID" prefWidth="75.0" text="UUID" />
@@ -60,12 +60,12 @@
             </TableView>
          </right>
          <left>
-            <VBox alignment="TOP_CENTER" prefHeight="530.0" prefWidth="227.0" spacing="40.0" BorderPane.alignment="CENTER">
+            <VBox alignment="TOP_CENTER" prefHeight="530.0" prefWidth="227.0" spacing="40.0" style="-fx-background-color: rgba(124, 12, 203, 1);" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="fxAdd" mnemonicParsing="false" onAction="#showOverlay" prefHeight="68.0" prefWidth="134.0" text="Add" />
-                  <Button fx:id="fxDelete" mnemonicParsing="false" onAction="#btnDelete" prefHeight="68.0" prefWidth="134.0" text="Delete" />
+                  <Button fx:id="fxAdd" mnemonicParsing="false" onAction="#showOverlay" prefHeight="68.0" prefWidth="134.0" style="-fx-background-color: rgba(42, 243, 132, 1); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 2, 0, 2, 2);" text="Add" />
+                  <Button fx:id="fxDelete" mnemonicParsing="false" onAction="#btnDelete" prefHeight="68.0" prefWidth="134.0" style="-fx-background-color: rgba(238, 43, 76, 1); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 2, 0, 2, 2);" text="Delete" />
                   
-                  <Button fx:id="fxRefresh" mnemonicParsing="false" onAction="#btnRefresh" prefHeight="68.0" prefWidth="134.0" text="Refresh" />
+                  <Button fx:id="fxRefresh" mnemonicParsing="false" onAction="#btnRefresh" prefHeight="68.0" prefWidth="134.0" style="-fx-background-color: rgba(14, 246, 234, 0.56); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 2, 0, 2, 2);" text="Refresh" />
                </children>
                <padding>
                   <Insets top="30.0" />
