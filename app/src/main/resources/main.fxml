@@ -43,22 +43,6 @@
                </children>
             </VBox>
          </top>
-         <right>
-            <TableView fx:id="table" prefHeight="667.0" prefWidth="1025.0" BorderPane.alignment="CENTER">
-              <columns>
-                <TableColumn fx:id="fxID" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="fxUUID" prefWidth="75.0" text="UUID" />
-                  <TableColumn fx:id="fxbloodType" prefWidth="75.0" text="Blood Type" />
-                  <TableColumn fx:id="fxfirstName" prefWidth="75.0" text="First Name" />
-                  <TableColumn fx:id="fxmiddleName" prefWidth="75.0" text="Middle Name" />
-                  <TableColumn fx:id="fxlastName" prefWidth="75.0" text="Last Name" />
-                  <TableColumn fx:id="fxAge" prefWidth="75.0" text="Age" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-         </right>
          <left>
             <VBox alignment="TOP_CENTER" prefHeight="530.0" prefWidth="227.0" spacing="40.0" style="-fx-background-color: rgba(124, 12, 203, 1);" BorderPane.alignment="CENTER">
                <children>
@@ -75,8 +59,24 @@
          <bottom>
             <AnchorPane prefHeight="0.0" prefWidth="1150.0" BorderPane.alignment="CENTER" />
          </bottom>
+         <center>
+            <TableView fx:id="table" prefHeight="667.0" prefWidth="1025.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="fxID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="fxUUID" prefWidth="75.0" text="UUID" />
+                  <TableColumn fx:id="fxbloodType" prefWidth="75.0" text="Blood Type" />
+                  <TableColumn fx:id="fxfirstName" prefWidth="75.0" text="First Name" />
+                  <TableColumn fx:id="fxmiddleName" prefWidth="75.0" text="Middle Name" />
+                  <TableColumn fx:id="fxlastName" prefWidth="75.0" text="Last Name" />
+                  <TableColumn fx:id="fxAge" prefWidth="75.0" text="Age" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
       </BorderPane>
-      <AnchorPane fx:id="overlayPane" prefHeight="587.0" prefWidth="1005.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);" visible="false">
+      <AnchorPane fx:id="overlayPane" prefHeight="587.0" prefWidth="1005.0" style="-fx-background-color: rgba(0,0,0,0.5);" visible="false">
          <children>
             <FlowPane hgap="27.0" layoutX="330.0" layoutY="137.0" prefHeight="308.0" prefWidth="370.0" style="-fx-background-color: rgba(255,255,255,1); -fx-background-radius: 20px;" translateX="60.0" translateY="50.0" vgap="20.0">
                <children>
@@ -94,5 +94,17 @@
             <Button fx:id="fxInsert" layoutX="412.0" layoutY="408.0" mnemonicParsing="false" onAction="#insertBtnAction" prefHeight="48.0" prefWidth="86.0" style="-fx-background-color: rgba(1, 241, 109, 0.8); -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 4, 0, 0, 2);" text="Insert" />
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="overlaypane2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.5);" visible="false">
+         <children>
+            <FlowPane hgap="31.0" layoutX="390.0" layoutY="158.0" prefHeight="366.0" prefWidth="370.0" style="-fx-background-color: rgba(255,255,255,1);">
+               <children>
+                  <TextField />
+                  <TextField />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </FlowPane>
+         </children></AnchorPane>
    </children>
 </StackPane>
